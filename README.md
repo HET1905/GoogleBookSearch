@@ -1,9 +1,10 @@
 # [GoogleBookSearch](https://google-serach-book.herokuapp.com/)
-
+Link To the page : (https://google-serach-book.herokuapp.com/)
 
 Google Book Serch is an app in React, Node, Mongo and Express. Google Book Api is used to get data for the books.
 
 ## Functionality:
+
 User can type the name of book they want to serch. The results will be displayed in Result List. User can view the book in new window or can save the book is database.
 
 ## Game Images
