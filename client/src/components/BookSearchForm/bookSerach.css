@@ -1,0 +1,28 @@
+#serachDiv {
+  width: 98%;
+  height: 230px;
+  margin: auto auto;
+  margin-top: 2%;
+  border: 1px solid #000;
+}
+#serachDiv h1,
+#search,
+.btnSearch {
+  margin-top: 2%;
+  margin-left: 2%;
+}
+#serachDiv h1 {
+  text-align: left;
+}
+#search {
+  width: 96%;
+  height: 40px;
+  display: block;
+}
+.btnSearch {
+  display: block;
+  float: right;
+  width: 10%;
+
+  margin-right: 2%;
+}

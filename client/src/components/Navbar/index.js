@@ -4,20 +4,20 @@ import React from "react";
 function Navbar() {
   return (
     
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="/">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a className="navbar-brand" href="/">
         Google Seach Book
       </a>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/serch">
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item">
+            <a className="nav-link" href="/serch">
               Seach 
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/saved">
+          <li className="nav-item">
+            <a className="nav-link" href="/saved">
               Saved
             </a>
           </li>
