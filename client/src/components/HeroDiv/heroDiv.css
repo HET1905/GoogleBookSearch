@@ -1,0 +1,9 @@
+#heroDiv{
+    width: 100%;
+    height: 200px;
+    padding:20px 0;
+    border-bottom: 2px solid #000;
+    background: #ccc url("./images/books.jpg");
+    background-size: contain;
+    /* background-position: center; */
+}
