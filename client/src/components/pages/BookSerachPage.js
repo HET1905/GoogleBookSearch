@@ -1,33 +1,36 @@
 import React,{Component} from "react";
 import BookSearchForm from "../BookSearchForm";
-import ResultsContainer from "../Result";
+// import ResultsContainer from "../Result";
+import Result from "../Result";
 import API from "../../utils/API";
 
 
 class BookSearchPage extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            bookInput: "",
-            bookData: []
+    
+        state = {
+            search:"",
+            results:[]
         }
-        this.handleSearchClick = this.handleSearchClick.bind(this);
-        this.handleChange = this.handleChange.bind(this);
+      
+    
+
+    handleInputChange=(e)=> {
+        e.preventDefault();
+        this.setState(
+            {search: e.target.value}
+            );
+        console.log(this.state.search);
     }
 
-    handleChange(e) {
+    handleSearchClick=(e)=> {
         e.preventDefault();
-        this.setState({bookInput: e.target.value})
-    }
-
-    handleSearchClick(e) {
-        e.preventDefault();
-        API.searchBooks(this.state.bookInput)
+        console.log(this.state.search);
+        API.getGoogleBooks(this.state.search)
             .then(
                 (response) => {
-                    console.log(response);
+                    console.log(response.data);
                     this.setState({bookData: response.data});
-                    this.setState({bookInput: ""});
+                    // this.setState({search: ""});
                 }
             );
     }
@@ -35,10 +38,10 @@ class BookSearchPage extends Component {
     render() {
         return(
             <main>
-                <BookSearchForm handleChange={this.handleChange} handleSearchClick={this.handleSearchClick} />
-                {(this.state.bookData.length > 0)?
-                    <ResultsContainer bookData={this.state.bookData} path={this.props.match.path}/> : null
-                }
+                <BookSearchForm handleInputChange={this.handleInputChange} handleSearchClick={this.handleSearchClick} />
+               
+                    <Result/> 
+             
             </main>
         );
     }

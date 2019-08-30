@@ -46,7 +46,7 @@ class Wrapper extends Component{
            
             <Route exact path="/saved" component={BooksSavedPage} />
         </Switch>
-        <Result />
+        {/* <Result /> */}
       </div>
     </Router>
   );
