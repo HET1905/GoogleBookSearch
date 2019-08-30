@@ -6,7 +6,7 @@ import Navbar from "../Navbar";
 import HeroDiv from "../HeroDiv";
 import BookSerchPage from "../pages/BookSerachPage";
 import BooksSavedPage from "../pages/BooksSavedPage";
-import Result from "../Result";
+// import Result from "../Result";
 
 class Wrapper extends Component{
 

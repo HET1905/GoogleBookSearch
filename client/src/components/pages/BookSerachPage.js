@@ -11,7 +11,15 @@ class BookSearchPage extends Component {
             search:"",
             results:[]
         }
-      
+    // componentDidMount() {
+    //     API.getBooks()
+    //         .then(res => 
+    //             {   console.log(res.data);
+    //                 this.setState({ booksData: res.data } )
+    //             })
+    //         .catch(err => console.log(err));
+    //     }
+          
     
 
     handleInputChange=(e)=> {
@@ -28,9 +36,10 @@ class BookSearchPage extends Component {
         API.getGoogleBooks(this.state.search)
             .then(
                 (response) => {
-                    console.log(response.data);
-                    this.setState({bookData: response.data});
+                    console.log(response.data.items);
+                    this.setState({bookData: response.data.items});
                     // this.setState({search: ""});
+                    // console.log(this.state.bookData);
                 }
             );
     }
@@ -39,8 +48,8 @@ class BookSearchPage extends Component {
         return(
             <main>
                 <BookSearchForm handleInputChange={this.handleInputChange} handleSearchClick={this.handleSearchClick} />
-               
-                    <Result/> 
+                    
+                    <Result bookData={this.state.bookData}/> 
              
             </main>
         );
