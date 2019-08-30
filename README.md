@@ -8,7 +8,7 @@ Google Book Serch is an app in React, Node, Mongo and Express. Google Book Api i
 
 ## Game Images
 
-![Clicky Game](https://github.com/HET1905/GoogleBookSeach/blob/master/GoogleSearch.PNG "Clicky Game")
+![Google Search Book](https://github.com/HET1905/GoogleBookSearch/blob/master/GoogleSearch.PNG "Google Search Book")
 
 ## Node Packages used:
 1. axios
