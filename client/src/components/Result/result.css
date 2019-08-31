@@ -13,3 +13,15 @@
 .btnGroup .btn{
     margin-left: 5px;
 }
+.bookImg{
+    /* float: left; */
+    margin-right: 10px;
+    /* width: 100px;
+    height: 100px; */
+}
+.desc{
+    /* float: right; */
+}
+.clear{
+    clear: both;
+}

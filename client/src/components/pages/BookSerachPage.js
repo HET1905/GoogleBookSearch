@@ -55,8 +55,9 @@ class BookSearchPage extends Component {
             <Result key={book.volumeInfo.title} 
                             title={book.volumeInfo.title}
                             author={book.volumeInfo.authors}
-                            description={book.searchInfo.textSnippet}
-                            link ={book.selfLink} 
+                            description={book.volumeInfo.description}
+                            link ={book.accessInfo.webReaderLink} 
+                            imgLink={book.volumeInfo.imageLinks.thumbnail}
             />);
           })}
         </ResultContainer>
