@@ -2,7 +2,7 @@ import React from "react";
 import "./result.css";
 
 function Result(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <div id="resultItem">
       <h3>Title : {props.title}</h3>
@@ -23,11 +23,7 @@ function Result(props) {
           </a>
         </div>
       </div>
-      {/* <section>
-        <img src={props.imgLink} className="bookImg" alt={props.title}></img>
-        <p className="desc">{props.description}</p>
-        <a href={props.link} className="clear">See the book</a>
-      </section> */}
+      
     </div>
   );
 }

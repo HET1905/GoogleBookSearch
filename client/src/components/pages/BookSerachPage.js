@@ -8,7 +8,6 @@ import API from "../../utils/API";
 class BookSearchPage extends Component {
   state = {
     search: "",
-    results: [],
     booksData: []
   };
   componentDidMount() {
@@ -24,14 +23,14 @@ class BookSearchPage extends Component {
   handleInputChange = e => {
     e.preventDefault();
     this.setState({ search: e.target.value });
-    console.log(this.state.search);
+    // console.log(this.state.search);
   };
 
   handleSearchClick = e => {
     e.preventDefault();
-    console.log(this.state.search);
+    // console.log(this.state.search);
     API.getGoogleBooks(this.state.search).then(response => {
-      console.log(response.data.items);
+      // console.log(response.data.items);
       this.setState({ booksData: response.data.items });
       // this.setState({search: ""});
       // console.log(this.state.bookData);
@@ -39,7 +38,7 @@ class BookSearchPage extends Component {
   };
 
   render() {
-    console.log(this.state.booksData);
+    // console.log(this.state.booksData);
     return (
       <div>
         <BookSearchForm
@@ -50,7 +49,7 @@ class BookSearchPage extends Component {
 
         <ResultContainer>
           {this.state.booksData.map(book => {
-           console.log(book.volumeInfo.title);
+          //  console.log(book.volumeInfo.title);
             return (
             <Result key={book.volumeInfo.title} 
                             title={book.volumeInfo.title}

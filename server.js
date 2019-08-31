@@ -16,21 +16,20 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks");
 
 
-// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoScrapper";
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks";
-// mongoose.connect(MONGODB_URI);
-mongoose.connect(MONGODB_URI, {
-    useNewUrlParser: true
-}, function (err) {
-    if (err) {
-        console.log(err)
-    } else {
-        console.log('Mongo db- googlebooks - connected');
-    }
-});
+// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks";
+// // mongoose.connect(MONGODB_URI);
+// mongoose.connect(MONGODB_URI, {
+//     useNewUrlParser: true
+// }, function (err) {
+//     if (err) {
+//         console.log(err)
+//     } else {
+//         console.log('Mongo db- googlebooks - connected');
+//     }
+// });
 
 
 

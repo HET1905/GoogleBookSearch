@@ -6,8 +6,8 @@ const APIKEY = "&api_key=AIzaSyCWY9vK1HdPhULh98Oka0qlul3h2bCGHPQ";
 
 
 export default {
-    getBooks: () => {
-        return axios.get("/api/books");
+    getBooks: function() {
+        return axios.get("/books/api");
     },
     searchBooks: (title) => {
         return axios.post("/search", {title: title});
