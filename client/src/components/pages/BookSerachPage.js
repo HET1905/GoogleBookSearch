@@ -46,7 +46,7 @@ class BookSearchPage extends Component {
           handleInputChange={this.handleInputChange}
           handleSearchClick={this.handleSearchClick}
         />
-        <Result />
+        {/* <Result /> */}
 
         <ResultContainer>
           {this.state.booksData.map(book => {
