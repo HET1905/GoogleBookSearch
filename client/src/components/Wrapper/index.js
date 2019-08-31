@@ -42,8 +42,6 @@ class Wrapper extends Component{
         <Switch>
             <Route exact path="/" component={BookSerchPage} />
             <Route exact path="/serch" component={BookSerchPage} />
-           
-           
             <Route exact path="/saved" component={BooksSavedPage} />
         </Switch>
         {/* <Result /> */}

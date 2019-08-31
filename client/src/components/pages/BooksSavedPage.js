@@ -3,14 +3,13 @@ import Result from "../Result";
 import API from "../../utils/API";
 
 class BooksSavedPage extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+    
+        state = {
             savedBooks: []
         }
-    }
+    
 
-    componentWillMount() {
+    componentWillMount=()=> {
         API.getBooks().then(
             (response) => {
                 this.setState({savedBooks: response.data});
