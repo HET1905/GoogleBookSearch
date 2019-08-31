@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import BookSearchForm from "../BookSearchForm";
-import ResultsContainer from "../ResultContainer";
+import ResultContainer from "../ResultContainer";
 import Result from "../Result";
 // import Result from "../Result";
 import API from "../../utils/API";
@@ -9,13 +9,14 @@ class BookSearchPage extends Component {
   state = {
     search: "",
     results: [],
-    bookData: []
+    booksData: []
   };
   componentDidMount() {
     API.getGoogleBooks("HTML")
       .then(res => {
-        console.log(res.data.items);
+        // console.log(res.data.items);
         this.setState({ booksData: res.data.items });
+        // console.log(this.state.booksData);
       })
       .catch(err => console.log(err));
   }
@@ -31,13 +32,14 @@ class BookSearchPage extends Component {
     console.log(this.state.search);
     API.getGoogleBooks(this.state.search).then(response => {
       console.log(response.data.items);
-      this.setState({ bookData: response.data.items });
+      this.setState({ booksData: response.data.items });
       // this.setState({search: ""});
       // console.log(this.state.bookData);
     });
   };
 
   render() {
+    console.log(this.state.booksData);
     return (
       <div>
         <BookSearchForm
@@ -46,8 +48,9 @@ class BookSearchPage extends Component {
         />
         <Result />
 
-        <ResultsContainer>
-          {this.state.bookData.map(book => {
+        <ResultContainer>
+          {this.state.booksData.map(book => {
+           console.log(book.volumeInfo.title);
             return (
             <Result key={book.volumeInfo.title} 
                             title={book.volumeInfo.title}
@@ -56,7 +59,7 @@ class BookSearchPage extends Component {
                             link ={book.selfLink} 
             />);
           })}
-        </ResultsContainer>
+        </ResultContainer>
       </div>
     );
   }

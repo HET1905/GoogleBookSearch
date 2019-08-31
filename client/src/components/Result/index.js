@@ -2,10 +2,9 @@ import React from "react";
 import "./result.css";
 
 function Result(props) {
+  console.log(props);
   return (
     <div id="resultItem">
-      {console.log(props)}
-
       <h3>{props.title}Title</h3>
       <h4>Author</h4>
       <div className="btnGroup">
