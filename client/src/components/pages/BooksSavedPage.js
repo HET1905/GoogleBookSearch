@@ -8,7 +8,7 @@ class BooksSavedPage extends React.Component {
     savedBooks: []
   };
 
-  componentWillMount = () => {
+  componentDidMount = () => {
     API.getBooks()
       .then(response => {
         this.setState({ savedBooks: response.data });
