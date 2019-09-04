@@ -8,16 +8,24 @@ import API from "../../utils/API";
 class BookSearchPage extends Component {
   state = {
     search: "",
-    booksData: []
+    booksData: [],
+    title:"",
+    authors:"",
+    description:"",
+    image:"",
+    link:""
   };
   componentDidMount() {
     API.getGoogleBooks("HTML")
       .then(res => {
-        // console.log(res.data.items);
+        console.log(res.data.items);
         this.setState({ booksData: res.data.items });
         // console.log(this.state.booksData);
       })
       .catch(err => console.log(err));
+  }
+  alertDisplay =()=>{
+    alert('Record saved');
   }
 
   handleInputChange = e => {
@@ -37,6 +45,27 @@ class BookSearchPage extends Component {
     });
   };
 
+  onSaveClick = (title,author,imgLink,description,link) =>{
+    // alert('Save Attached');
+    alert('Title : ' + title);  
+    console.log(title,author,imgLink,description,link);
+    API.addBookToDB({
+      title:title,
+      authors:author.toString(),
+      description:description,
+      image:imgLink,
+      link:link
+    })
+    .then(this.alertDisplay)
+    .catch(err=>console.log(err));
+  };
+  viewOnClick =(title) =>{
+    alert('View attached');
+    alert("title : " + title);
+   
+  }
+
+
   render() {
     // console.log(this.state.booksData);
     return (
@@ -45,7 +74,7 @@ class BookSearchPage extends Component {
           handleInputChange={this.handleInputChange}
           handleSearchClick={this.handleSearchClick}
         />
-        {/* <Result /> */}
+        
 
         <ResultContainer>
           {this.state.booksData.map(book => {
@@ -57,6 +86,9 @@ class BookSearchPage extends Component {
                             description={book.volumeInfo.description}
                             link ={book.accessInfo.webReaderLink} 
                             imgLink={book.volumeInfo.imageLinks.thumbnail}
+                            onSaveClick= {this.onSaveClick}
+                            viewOnClick = {this.viewOnClick}
+                           
             />);
           })}
         </ResultContainer>

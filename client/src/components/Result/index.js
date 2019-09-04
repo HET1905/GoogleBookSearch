@@ -8,8 +8,10 @@ function Result(props) {
       <h3>Title : {props.title}</h3>
       <h4>Author : {props.author}</h4>
       <div className="btnGroup">
-        <button className="btn btn-primary">View</button>
-        <button className="btn btn-primary">Save</button>
+        <button className="btn btn-primary"
+                onClick={()=>props.viewOnClick(props.title)}>View</button>
+        <button className="btn btn-primary" 
+                onClick={() => props.onSaveClick(props.title,props.author,props.imgLink,props.description,props.link)}>Save</button>
       </div>
       <p className="clear"></p>
       <div className="row">

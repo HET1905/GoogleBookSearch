@@ -8,7 +8,7 @@ module.exports = {
       .sort({ date: -1 })
       .then(dbModel =>
         {
-        console.log("Hello World");
+        // console.log("Hello World");
         res.json(dbModel)
         }
         )
@@ -21,6 +21,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+    console.log(req.body);
     db.Book
       .create(req.body)
       .then(dbModel => res.json(dbModel))
