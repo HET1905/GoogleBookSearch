@@ -10,7 +10,7 @@ function BookSaved(props) {
       <div className="btnGroup">
        
         <button className="btn btn-primary" 
-                onClick={() => props.onSaveClick(props.title,props.author,props.imgLink,props.description,props.link)}>
+                onClick={() => props.onDeleteClick(props.id)}>
                     Delete</button>
       </div>
       <p className="clear"></p>

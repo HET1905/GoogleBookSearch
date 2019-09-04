@@ -11,15 +11,30 @@ class BooksSavedPage extends React.Component {
   };
 
   componentDidMount = () => {
-    API.getBooks()
-      .then(response => {
-        this.setState({ savedBooks: response.data });
-        // console.log(this.state.savedBooks);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+   this.loadBooks();
   };
+
+loadBooks = () =>{
+  API.getBooks()
+  .then(response => {
+    this.setState({ savedBooks: response.data });
+    // console.log(this.state.savedBooks);
+  })
+  .catch(err => {
+    console.log(err);
+  });
+}
+
+  alertDisplay =()=>{
+    alert('Book Deleted...');
+  }
+
+  onDeleteClick = (id)=>{
+    // alert("delete attached : ID : " + id);
+    API.deleteBook(id)
+    .then(res=>this.loadBooks())
+    .catch(err => console.log(err));
+  }
 
   render() {
     console.log(this.state.savedBooks);
@@ -33,11 +48,13 @@ class BooksSavedPage extends React.Component {
             return (
               <BookSaved
                 key={book._id}
+                id={book._id}
                 title={book.title}
                 author={book.authors}
                 description={book.description}
                 link={book.link}
                 imgLink={book.image}
+                onDeleteClick = {this.onDeleteClick}
               />
             );
           })}
