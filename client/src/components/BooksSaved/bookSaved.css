@@ -1,0 +1,27 @@
+
+#resultItem{
+    width: 90%;
+    padding: 10px;
+    margin: auto auto;
+    margin-top: 2%;
+    border:1px solid #000;
+    text-align: left;
+}
+.btnGroup{
+    float: right;
+}
+.btnGroup .btn{
+    margin-left: 5px;
+}
+.bookImg{
+    /* float: left; */
+    margin-right: 10px;
+    /* width: 100px;
+    height: 100px; */
+}
+.desc{
+    /* float: right; */
+}
+.clear{
+    clear: both;
+}

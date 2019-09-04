@@ -1,6 +1,8 @@
 import React from "react";
-import Result from "../Result";
-import ResultContainer from "../ResultContainer";
+// import Result from "../Result";
+// import ResultContainer from "../ResultContainer";
+import BookSavedContainer from "../BookSavedContainer";
+import BookSaved from "../BooksSaved";
 import API from "../../utils/API";
 
 class BooksSavedPage extends React.Component {
@@ -12,7 +14,7 @@ class BooksSavedPage extends React.Component {
     API.getBooks()
       .then(response => {
         this.setState({ savedBooks: response.data });
-        console.log(this.state.savedBooks);
+        // console.log(this.state.savedBooks);
       })
       .catch(err => {
         console.log(err);
@@ -24,12 +26,12 @@ class BooksSavedPage extends React.Component {
     return (
       <main>
         <h1>Books Saved Page</h1>
-        {/* <Result savedBooks={this.state.savedBooks} path={this.props.match.path}/> */}
+       
 
-        <ResultContainer>
+        <BookSavedContainer>
           {this.state.savedBooks.map(book => {
             return (
-              <Result
+              <BookSaved
                 key={book._id}
                 title={book.title}
                 author={book.authors}
@@ -39,7 +41,7 @@ class BooksSavedPage extends React.Component {
               />
             );
           })}
-        </ResultContainer>
+        </BookSavedContainer>
       </main>
     );
   }

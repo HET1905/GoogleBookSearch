@@ -18,7 +18,7 @@ class BookSearchPage extends Component {
   componentDidMount() {
     API.getGoogleBooks("HTML")
       .then(res => {
-        console.log(res.data.items);
+        // console.log(res.data.items);
         this.setState({ booksData: res.data.items });
         // console.log(this.state.booksData);
       })
@@ -47,8 +47,8 @@ class BookSearchPage extends Component {
 
   onSaveClick = (title,author,imgLink,description,link) =>{
     // alert('Save Attached');
-    alert('Title : ' + title);  
-    console.log(title,author,imgLink,description,link);
+    // alert('Title : ' + title);  
+    // console.log(title,author,imgLink,description,link);
     API.addBookToDB({
       title:title,
       authors:author.toString(),
@@ -60,7 +60,7 @@ class BookSearchPage extends Component {
     .catch(err=>console.log(err));
   };
   viewOnClick =(title) =>{
-    alert('View attached');
+    // alert('View attached');
     alert("title : " + title);
    
   }
