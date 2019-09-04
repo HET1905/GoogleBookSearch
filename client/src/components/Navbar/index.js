@@ -13,7 +13,7 @@ function Navbar() {
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
             <Link className="nav-link" to="/serch">
-              Seach 
+              Search 
             </Link>
           </li>
           <li className="nav-item">
