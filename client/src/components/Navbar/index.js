@@ -1,30 +1,26 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <Link className="navbar-brand" to="/">
-        Google Seach Book
+        Google Search Book
       </Link>
 
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item">
-            <Link className="nav-link" to="/serch">
-              Search 
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/saved">
-              Saved
-            </Link>
-          </li>
-        </ul>
-      </div>
+      <ul className="navbar-nav mr-auto">
+        <li className="nav-item active">
+          <Link className="nav-link" to="/search">
+            Search<span className="sr-only">(current)</span>
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/saved">
+            Saved
+          </Link>
+        </li>
+      </ul>
     </nav>
-    
   );
 }
 

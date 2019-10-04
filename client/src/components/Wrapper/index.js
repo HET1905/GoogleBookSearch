@@ -1,4 +1,4 @@
-import React,{ Component} from "react";
+import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import API from "../../utils/API";
@@ -8,8 +8,7 @@ import BookSerchPage from "../pages/BookSerachPage";
 import BooksSavedPage from "../pages/BooksSavedPage";
 // import Result from "../Result";
 
-class Wrapper extends Component{
-
+class Wrapper extends Component {
   state = {
     books: [],
     bookSerach: ""
@@ -32,22 +31,21 @@ class Wrapper extends Component{
       .catch(err => console.log(err));
   };
 
-  render(){
- 
-  return (
-    <Router>
-      <div>
-        <Navbar />
-        <HeroDiv />
-        <Switch>
+  render() {
+    return (
+      <Router>
+        <div>
+          <Navbar />
+          <HeroDiv />
+          <Switch>
             <Route exact path="/" component={BookSerchPage} />
-            <Route exact path="/serch" component={BookSerchPage} />
+            <Route exact path="/search" component={BookSerchPage} />
             <Route exact path="/saved" component={BooksSavedPage} />
-        </Switch>
-        {/* <Result /> */}
-      </div>
-    </Router>
-  );
+          </Switch>
+          {/* <Result /> */}
+        </div>
+      </Router>
+    );
   }
 }
 
